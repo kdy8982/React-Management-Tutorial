@@ -8,7 +8,7 @@ function App() {
   const [customers, setCustomers] = useState([
     {
       id: 1,
-      image: 'https://placeimg.com/64/64/1',
+      image: 'https://picsum.photos/id/1/64/64',
       name: '홍길동',
       birthday: '961222',
       gender: '남자',
@@ -16,7 +16,7 @@ function App() {
     },
     {
       id: 2,
-      image: 'https://placeimg.com/64/64/2',
+      image: 'https://picsum.photos/id/2/64/64',
       name: '유관순',
       birthday: '961223',
       gender: '여자',
@@ -24,7 +24,7 @@ function App() {
     },
     {
       id: 3,
-      image: 'https://placeimg.com/64/64/3',
+      image: 'https://picsum.photos/id/3/64/64',
       name: '이순신',
       birthday: '961224',
       gender: '남자',
@@ -34,30 +34,20 @@ function App() {
 
   return (
     <div>
-      <Customer
-        id={customers[0].id}
-        image={customers[0].image}
-        name={customers[0].name}
-        birthday={customers[0].birthday}
-        gender={customers[0].gender}
-        job={customers[0].job}
-      />
-      <Customer
-        id={customers[1].id}
-        image={customers[1].image}
-        name={customers[1].name}
-        birthday={customers[1].birthday}
-        gender={customers[1].gender}
-        job={customers[1].job}
-      />
-      <Customer
-        id={customers[2].id}
-        image={customers[2].image}
-        name={customers[2].name}
-        birthday={customers[2].birthday}
-        gender={customers[2].gender}
-        job={customers[2].job}
-      />
+      {customers.map(item => {
+        return (
+          <>
+            <Customer
+              id={item.id}
+              image={item.image}
+              name={item.name}
+              birthday={item.birthday}
+              gender={item.gender}
+              job={item.job}
+            />
+          </>
+        )
+      })}
     </div>
   )
 }
